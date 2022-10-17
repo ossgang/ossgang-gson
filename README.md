@@ -27,16 +27,16 @@ adapter factory cannot determine that this should represent a mapbacked object.
 Having this 2 steps in place, you can convert your mapbacked objects into json and vice versa:
 
 ```java
-Person misterX=Mapbackeds.builder(Person.class)//
-        .field(Person::name,"misterX")//
-        .field(Person::yearOfBirth,1955)//
+Person misterX = Mapbackeds.builder(Person.class)//
+        .field(Person::name, "misterX")//
+        .field(Person::yearOfBirth, 1955)//
         .build();
 
-String jsonString=gson.toJson(misterX);
+String jsonString = gson.toJson(misterX);
 /* Results in something like: '{"name":"misterX","yearOfBirth":1955}' */
 
-Person m=gson.fromJson(jsonString,Person.class);
+Person m = gson.fromJson(jsonString, Person.class);
 /* Results in a new person instance, equivalent to misterX */
 ```
 
-This should allow to use (truely immutable!) objects for data objects, e.g. in json APIs.
+This should allow to use (truly immutable!) mapbacked objects for data objects, e.g. in json APIs.
