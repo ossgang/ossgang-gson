@@ -24,7 +24,7 @@ import static java.util.Objects.requireNonNull;
  */
 public class MapbackedGsonAdapter<T> extends TypeAdapter<T> {
 
-    public static final TypeAdapterFactory FACTORY = new MapbackedsGsonAdapterFactory();
+    public static final TypeAdapterFactory FACTORY = new MapbackedGsonAdapterFactory();
 
     private final Gson context;
     private final Class<T> backedInterface;

@@ -70,7 +70,7 @@ public class FromToJsonTest {
     }
 
     @Mapbacked
-    public interface Person {
+    private interface Person {
         String name();
 
         int yearOfBirth();

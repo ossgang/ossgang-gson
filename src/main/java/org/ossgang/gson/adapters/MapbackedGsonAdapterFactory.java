@@ -10,7 +10,13 @@ import java.lang.reflect.Proxy;
 import java.lang.reflect.Type;
 import java.util.Optional;
 
-public class MapbackedsGsonAdapterFactory implements TypeAdapterFactory {
+/**
+ * A adapter factory for gson, that creates an adapter, in case the passed in type is an interface that is annotated
+ * with the @{@link Mapbacked} annotation. To use the mapbacked objects, this annotation is mandatory, otherwise there
+ * is no means to detect from the class only, if the adapter can be applied or not.
+ */
+/* package visibility, as it is only used from the static field of Mapbacked json adapter.*/
+class MapbackedGsonAdapterFactory implements TypeAdapterFactory {
 
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
